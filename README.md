@@ -3,7 +3,7 @@
 ## Overview
 This is an Android application designed for practicing Morse code listening. It supports alphabets, numbers, and symbols, offering highly customizable playback settings to suit your training level.
 
-![p00](https://github.com/user-attachments/assets/9c8e6fe7-0d56-4839-849a-814535857035)
+(![Main Screen](screenshots/image.jpg)
 
 ## Key Features
 * **Various Modes**: Supports Repeat, Random, and Word-based playback.
