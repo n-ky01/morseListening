@@ -1,0 +1,29 @@
+# 開発環境 (Android Studio / IntelliJ) 固有の設定
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# ビルド生成物（これらは自動生成されるので登録不要）
+build/
+app/build/
+/captures
+
+# 各自のPC固有の設定（SDKのパスなど）
+local.properties
+
+# Gradleのキャッシュと実行用ファイル
+.gradle/
+.navigation/
+
+# APKファイル（成果物）
+*.apk
+app/release/
+
+# ネイティブコード（C++等）を使用する場合の設定
+.externalNativeBuild
+.cxx/
+
+# OS固有のゴミ箱ファイル
+.DS_Store
+Thumbs.db

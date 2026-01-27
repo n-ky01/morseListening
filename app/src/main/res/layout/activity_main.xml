@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/morseResultText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="          "
+        android:textColor="#000000"
+        android:textSize="32sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/modeLayout" />
+
+    <LinearLayout
+        android:id="@+id/modeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/morseResultText"
+        app:layout_constraintBottom_toTopOf="@+id/kochGroup">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Repeat/Random" android:textSize="12sp" />
+            <Button android:id="@+id/rptrndmBtn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RANDOM" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MODE" android:textSize="12sp" />
+            <Button android:id="@+id/modeBtn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="koch" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pronounce" android:textSize="12sp" />
+            <Button android:id="@+id/alphaToggleBtn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ON" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/numCharGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/modeLayout"
+        app:layout_constraintBottom_toTopOf="@+id/spacingGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/kochGroup"
+        app:layout_constraintHorizontal_chainStyle="spread">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="numChar" />
+        <TextView android:id="@+id/numCharValueText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:textSize="20sp" android:textStyle="bold" />
+        <Button android:id="@+id/numCharPlusBtn" android:layout_width="60dp" android:layout_height="wrap_content" android:text="+" />
+        <Button android:id="@+id/numCharMinusBtn" android:layout_width="60dp" android:layout_height="wrap_content" android:text="-" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/kochGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@id/numCharGroup"
+        app:layout_constraintStart_toEndOf="@id/numCharGroup"
+        app:layout_constraintEnd_toStartOf="@id/delayGroup">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="koch level" />
+        <TextView android:id="@+id/kochLevelText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2(M)" android:textSize="20sp" android:textStyle="bold" />
+        <Button android:id="@+id/kochPlusBtn" android:layout_width="60dp" android:layout_height="wrap_content" android:text="+" />
+        <Button android:id="@+id/kochMinusBtn" android:layout_width="60dp" android:layout_height="wrap_content" android:text="-" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/delayGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@id/numCharGroup"
+        app:layout_constraintStart_toEndOf="@id/kochGroup"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="delay" />
+        <TextView android:id="@+id/delayValueText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1000" android:textSize="20sp" android:textStyle="bold" />
+        <Button android:id="@+id/delayplusBtn" android:layout_width="60dp" android:layout_height="wrap_content" android:text="+" />
+        <Button android:id="@+id/delayminusBtn" android:layout_width="60dp" android:layout_height="wrap_content" android:text="-" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/spacingGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/numCharGroup"
+        app:layout_constraintBottom_toTopOf="@+id/wpmGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/newRateGroup"
+        app:layout_constraintHorizontal_chainStyle="spread">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="spacing" />
+        <TextView android:id="@+id/spacingValueText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1.0" android:textSize="20sp" android:textStyle="bold" />
+        <Button android:id="@+id/spacingPlusBtn" android:layout_width="60dp" android:layout_height="wrap_content" android:text="+" />
+        <Button android:id="@+id/spacingMinusBtn" android:layout_width="60dp" android:layout_height="wrap_content" android:text="-" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/newRateGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@id/spacingGroup"
+        app:layout_constraintStart_toEndOf="@id/spacingGroup"
+        app:layout_constraintEnd_toStartOf="@+id/eBoostGroup">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="new char %" />
+        <TextView android:id="@+id/newRateValueText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20" android:textSize="20sp" android:textStyle="bold" />
+        <Button android:id="@+id/newRatePlusBtn" android:layout_width="60dp" android:layout_height="wrap_content" android:text="+" />
+        <Button android:id="@+id/newRateMinusBtn" android:layout_width="60dp" android:layout_height="wrap_content" android:text="-" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/eBoostGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@id/spacingGroup"
+        app:layout_constraintStart_toEndOf="@id/newRateGroup"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="e boost %" />
+        <TextView android:id="@+id/eBoostValueText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textSize="20sp" android:textStyle="bold" />
+        <Button android:id="@+id/eBoostPlusBtn" android:layout_width="60dp" android:layout_height="wrap_content" android:text="+" />
+        <Button android:id="@+id/eBoostMinusBtn" android:layout_width="60dp" android:layout_height="wrap_content" android:text="-" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wpmGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/spacingGroup"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/startstopButton"
+        app:layout_constraintHorizontal_chainStyle="spread">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="WPM" />
+        <TextView android:id="@+id/wpmValueText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20" android:textSize="20sp" android:textStyle="bold" />
+        <Button android:id="@+id/plusBtn" android:layout_width="60dp" android:layout_height="wrap_content" android:text="+" />
+        <Button android:id="@+id/minusBtn" android:layout_width="60dp" android:layout_height="wrap_content" android:text="-" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/startstopButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="START"
+        app:layout_constraintTop_toTopOf="@id/wpmGroup"
+        app:layout_constraintBottom_toBottomOf="@id/wpmGroup"
+        app:layout_constraintStart_toEndOf="@+id/wpmGroup"
+        app:layout_constraintEnd_toStartOf="@+id/volumeGroup" />
+
+    <LinearLayout
+        android:id="@+id/volumeGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@id/wpmGroup"
+        app:layout_constraintStart_toEndOf="@+id/startstopButton"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="VOLUME" />
+        <TextView android:id="@+id/volumeValueText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5" android:textSize="20sp" android:textStyle="bold" />
+        <Button android:id="@+id/plusVolumeBtn" android:layout_width="60dp" android:layout_height="wrap_content" android:text="+" />
+        <Button android:id="@+id/minusVolumeBtn" android:layout_width="60dp" android:layout_height="wrap_content" android:text="-" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
