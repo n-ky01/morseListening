@@ -74,16 +74,16 @@ This project is licensed under the [MIT License](https://opensource.org/license/
 | **音声遅延** | 500～3000msec |モールス信号と音声出力の間の遅延。 |
 
 **WORDモードについてのご注意**
-デフォルト: 3 つの組み込み単語を使用します。
-カスタム: 独自の word.txt を以下のディレクトリに配置して、デフォルトのリストを上書きします。 /Android/data/com.example.morselistening/files/word.txt
-このディレクトリにアクセスするには、デバイスをUSBケーブルで PC に接続してください。
+* デフォルト: 3 つの組み込み単語を使用します。
+* カスタム: 独自の word.txt を以下のディレクトリに配置して、デフォルトのリストを上書きします。 /Android/data/com.example.morselistening/files/word.txt
+* このディレクトリにアクセスするには、デバイスをUSBケーブルで PC に接続してください。
 
 
 
 ## ビルド環境
 * **Android Studio**: Ladybug | 2024.2.1 (or Otter 2025.2.1)
 * **JDK**: 21 (Runtime version 21.0.8)
-* **Target SDK36
+* **Target** SDK36
 
 ## ライセンス
 このプロジェクトは、[MIT ライセンス](https://opensource.org/license/mit) に基づいてライセンスされています。
