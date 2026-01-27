@@ -41,7 +41,7 @@ You can customize your practice session with the following parameters:
 * **Target** SDK36
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](https://opensource.org/license/mit).
 
 --------------------
 # モールス聞き取り Android アプリケーション
@@ -86,4 +86,4 @@ This project is licensed under the [MIT License](LICENSE).
 * **Target SDK36
 
 ## ライセンス
-このプロジェクトは、[MIT ライセンス](LICENSE) に基づいてライセンスされています。
+このプロジェクトは、[MIT ライセンス](https://opensource.org/license/mit) に基づいてライセンスされています。
