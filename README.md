@@ -30,13 +30,15 @@ You can customize your practice session with the following parameters:
 | **Spacing** | 1.0 to 5.0 | Relative to 3-dot length. |
 | **Voice Delay** | 500 to 3000ms | Delay between Morse and voice output. |
 
-> **Note on WORD Mode**: To use this mode, please place your custom `word.txt` in the following directory:  
-> `/Android/data/com.example.morselistening/files/word.txt`
+**Note on WORD Mode**
+* **Default: Uses 3 built-in words.**
+* **Custom: Place your own word.txt in the directory below to override the default list. /Android/data/com.example.morselistening/files/word.txt**
+* **Connect your device to a PC to access this directory.**
 
 ## Build Environment
 * **Android Studio**: Ladybug | 2024.2.1 (or Otter 2025.2.1)
 * **JDK**: 21 (Runtime version 21.0.8)
-* **Target SDK36
+* **Target** SDK36
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
@@ -71,9 +73,12 @@ This project is licensed under the [MIT License](LICENSE).
 | **spacing** | 1.0 ～ 5.0
 | **音声遅延** | 500～3000msec |モールス信号と音声出力の間の遅延。 |
 
-**WORD モードに関する注意**: このモードを使用するには、
-`word.txt` を次のディレクトリに配置してください。
-`/Android/data/com.example.morselistening/files/word.txt`
+**WORDモードについてのご注意**
+デフォルト: 3 つの組み込み単語を使用します。
+カスタム: 独自の word.txt を以下のディレクトリに配置して、デフォルトのリストを上書きします。 /Android/data/com.example.morselistening/files/word.txt
+このディレクトリにアクセスするには、デバイスをUSBケーブルで PC に接続してください。
+
+
 
 ## ビルド環境
 * **Android Studio**: Ladybug | 2024.2.1 (or Otter 2025.2.1)
