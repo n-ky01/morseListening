@@ -12,6 +12,9 @@ This is an Android application designed for practicing Morse code listening. It 
     * Adjust WPM (15–30), Spacing, and Volume.
     * Optional character pronunciation (voice) with adjustable delay.
 
+##Download APK here (https://github.com/n-ky01/morseListening/releases)
+
+
 ## Settings & Parameters
 You can customize your practice session with the following parameters:
 
@@ -50,6 +53,8 @@ This project is licensed under the [MIT License](LICENSE).
 * **再生設定**:
     * WPM (15 ～ 30)、間隔、音量を調整します。 
     * 遅延を調整可能な音声発音。
+
+##APKのダウンロードはこちら　(https://github.com/n-ky01/morseListening/releases)
 
 ## 設定とパラメータ
 次のパラメータを使用して練習セッションをカスタマイズできます。
