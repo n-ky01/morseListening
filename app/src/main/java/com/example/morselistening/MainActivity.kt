@@ -257,7 +257,7 @@ class MainActivity : AppCompatActivity() {
         // Delayプラスボタン (上限3000)
         findViewById<Button>(R.id.delayplusBtn).setOnClickListener {
             if (answerDelay < 3000) {
-                answerDelay += 100
+                answerDelay += 10
                 saveLong(SettingsManager.ANSWER_DELAY, answerDelay) // 保存
                 updateSettings()
             }
@@ -265,8 +265,8 @@ class MainActivity : AppCompatActivity() {
 
         // Delayマイナスボタン (下限500)
         findViewById<Button>(R.id.delayminusBtn).setOnClickListener {
-            if (answerDelay > 500) {
-                answerDelay -= 100
+            if (answerDelay > 100) {
+                answerDelay -= 10
                 saveLong(SettingsManager.ANSWER_DELAY, answerDelay) // 保存
                 updateSettings()
             }
@@ -579,23 +579,25 @@ class MainActivity : AppCompatActivity() {
 
 
         // 再生中は "?" を文字数分並べる
-        morseResultText.text = "? ".repeat(numChar).trim()
+//        morseResultText.text = "? ".repeat(numChar).trim()
+        // 再生開始時にすべてのアルファベットを表示する ---
+        morseResultText.text = selectedChars.joinToString(" ")
 
-        // ★ 複数文字を順番に再生する関数を呼び出す
+// モールス符号の再生
         playMultipleMorseCodes(selectedChars, 0) {
-            // 全符号が鳴り終わった後の処理
+            // モールスが終わってから answerDelay 待つ
             handler.postDelayed({
-                // アルファベットを一気に表示＆音声を順番に再生
                 if (isAlphaON) {
-                    // アルファベット表示＆音声を再生
+                    // アルファベット音声の再生
                     playMultipleVoices(selectedChars, 0) {
-                        // 全音声が終わったら1秒待って次のループへ
-                        handler.postDelayed({ playRandomMorseLoop() }, 1000L)
+                        // ★ここを修正：音声がすべて終わった後、再度 answerDelay 待ってから次へ
+                        handler.postDelayed({
+                            playRandomMorseLoop()
+                        }, answerDelay)
                     }
                 } else {
-                    // 音声読み上げオフの場合：すぐに次のループへ
-                    morseResultText.text = selectedChars.joinToString(" ")
-                    handler.postDelayed({ playRandomMorseLoop() }, 1800L)
+                    // 音声オフの場合も、表示を確認する時間を answerDelay 分取ってから次へ
+                    playRandomMorseLoop()
                 }
             }, answerDelay)
         }
@@ -627,9 +629,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // 複数の音声を順番に再生する再帰関数
+
+    // 複数の音声を順番に再生する再帰関数（表示済みの文字と重複しないよう修正）
     private fun playMultipleVoices(chars: List<String>, index: Int, onAllComplete: () -> Unit) {
-        if (index == 0) morseResultText.text = "" // 最初の再生時にテキストをクリア
+        // index 0 でクリアしてしまうと、表示したばかりの文字が消えるため、
+        // 「読み上げ中」の視覚的フィードバックが不要であればクリア処理を削除します。
+        // もし読み上げに合わせて文字の色を変えるなどの処理がないなら、音を鳴らすだけでOKです。
 
         if (index >= chars.size) {
             onAllComplete()
@@ -637,17 +642,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         val char = chars[index]
-        morseResultText.append("$char ") // アルファベットを1文字ずつ追加表示
-
         val soundId = voiceSoundMap[char]
         if (soundId != null) {
             soundPool.play(soundId, volume, volume, 1, 0, 1.0f)
         }
 
-        // 音声の長さを待ってから次の文字へ
         handler.postDelayed({
             playMultipleVoices(chars, index + 1, onAllComplete)
-        }, 600 )   // 600msec固定
+        }, 600)
     }
 
 
