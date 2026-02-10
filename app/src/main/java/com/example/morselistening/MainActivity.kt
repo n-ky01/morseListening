@@ -257,7 +257,7 @@ class MainActivity : AppCompatActivity() {
         // Delayプラスボタン (上限3000)
         findViewById<Button>(R.id.delayplusBtn).setOnClickListener {
             if (answerDelay < 3000) {
-                answerDelay += 10
+                answerDelay += 50
                 saveLong(SettingsManager.ANSWER_DELAY, answerDelay) // 保存
                 updateSettings()
             }
@@ -266,7 +266,7 @@ class MainActivity : AppCompatActivity() {
         // Delayマイナスボタン (下限500)
         findViewById<Button>(R.id.delayminusBtn).setOnClickListener {
             if (answerDelay > 100) {
-                answerDelay -= 10
+                answerDelay -= 50
                 saveLong(SettingsManager.ANSWER_DELAY, answerDelay) // 保存
                 updateSettings()
             }
