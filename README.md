@@ -28,7 +28,7 @@ You can customize your practice session with the following parameters:
 | **Koch Level** | 1 to 41 | Includes spaces as characters. |
 | **WPM** | 15 to 30 | Words Per Minute. |
 | **Spacing** | 1.0 to 5.0 | Relative to 3-dot length. |
-| **Voice Delay** | 500 to 3000ms | Delay between Morse and voice output. |
+| **Voice Delay** | 100 to 3000ms | Delay between Morse and voice output. |
 
 **Note on WORD Mode**
 * **Default: Uses 3 built-in words.**
@@ -71,7 +71,7 @@ This project is licensed under the [MIT License](https://opensource.org/license/
 | **kochレベル** | 1 ～ 41 |文字としてスペースが含まれます。
 | **WPM** | 15～30
 | **spacing** | 1.0 ～ 5.0
-| **音声遅延** | 500～3000msec |モールス信号と音声出力の間の遅延。 |
+| **音声遅延** | 100～3000msec |モールス信号と音声出力の間の遅延。 |
 
 **WORDモードについてのご注意**
 * デフォルト: 3 つの組み込み単語を使用します。
